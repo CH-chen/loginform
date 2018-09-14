@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <style>
+        .list1{
+            list-style: none;
+            color: red;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+{#<form action="" method="post" novalidate>#}
+{#    {% csrf_token %}#}
+{#    {{ form_obj.as_p }}#}
+{#    {{ form_obj.errors.pwd }}#}
+{#    <input type="submit" value="注册">#}
+{#</form>#}
+<div class="container" style="margin-top: 50px">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-4">
+            <form action="/index/" method="post" novalidate>
+                {% csrf_token %}
+                <div class="form-group {% if form_obj.name.errors.0 %}has-error{% endif %}">
+                    {{ form_obj.name.label }}
+                    {{ form_obj.name }}
+                    <span class="help-block">{{ form_obj.name.errors.0 }}</span>
+                </div>
+                <div class="form-group {% if form_obj.pwd.errors.0 %}has-error{% endif %}">
+                    {{ form_obj.pwd.label }}
+                    {{ form_obj.pwd }}
+                    <span class="help-block">{{ form_obj.pwd.errors.0 }}</span>
+                </div>
+            <div class="form-group {% if form_obj.re_pwd.errors.0 %}has-error{% endif %}">
+                    {{ form_obj.re_pwd.label }}
+                    {{ form_obj.re_pwd }}
+                    <span class="help-block">{{ form_obj.re_pwd.errors.0 }}</span>
+                </div>
+            <div class="form-group {% if form_obj.email.errors.0 %}has-error{% endif %}">
+                    {{ form_obj.email.label }}
+                    {{ form_obj.email }}
+                    <span class="help-block">{{ form_obj.email.errors.0 }}</span>
+                </div>
+            <div class="form-group {% if form_obj.phone.errors.0 %}has-error{% endif %}">
+                    {{ form_obj.phone.label }}
+                    {{ form_obj.phone }}
+                    <span class="help-block">{{ form_obj.phone.errors.0 }}</span>
+                </div>
+            <div class="form-group {% if form_obj.city.errors.0 %}has-error{% endif %}">
+                    {{ form_obj.city.label }}
+                    {{ form_obj.city }}
+                    <span class="help-block">{{ form_obj.city.errors.0 }}</span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="提交" class="btn btn-default">
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
